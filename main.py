@@ -1,5 +1,4 @@
-inp_dur = input("Ваше число: ")
-inp_dur = int(inp_dur)
+inp_dur = int(input("Ваше число: "))
 SEC_IN_HR = 3600
 SEC_IN_DAY = 86400
 
