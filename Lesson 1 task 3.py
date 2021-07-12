@@ -5,4 +5,3 @@ for percent in range(20):
         print(percent, "процента ")
     else:
         print(percent, "процентов ")
-        
