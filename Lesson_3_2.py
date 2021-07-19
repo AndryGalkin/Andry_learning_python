@@ -10,5 +10,5 @@ def thesaurus(in_list):
     return res_dic
 
 
-names = ["Иван", "Мария", "Петр", "Илья"]
+names = ["Иван", "Мария", "Петр", "Прасковья", "Илья", "Мелхесидек"]
 print(thesaurus(names))
