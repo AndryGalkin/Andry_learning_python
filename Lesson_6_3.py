@@ -1,6 +1,8 @@
 from json import dump
 from itertools import zip_longest
 
+# unreal
+
 with open('user.csv', 'r', encoding='utf-8') as users:
     with open('hobby_1.csv', 'r', encoding='utf-8') as hobby:
         if len(users.readlines()) >= len(hobby.readlines()):
