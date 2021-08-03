@@ -20,3 +20,6 @@ def create_path(values, prefix=''):
                 elif isinstance(i, str):
                     with open(os.path.join(dir_path, f'{i}'), 'w') as _:
                         pass
+
+
+create_path(content)
