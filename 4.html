@@ -6,29 +6,92 @@
 </head>
 <body>
 <!--
-Необязательное задание.
+Обязательное задание.
 
-Необходимо от пользователя получить число.
-Необходимо вывести разряды числа, а именно: количество сотен, десятков и единиц.
+Необходимо реализовать четыре функции, каждая функция должна принимать по два
+числа и выполнять одну из операций (каждая функция выполняет одну из них):
+1. Сложение
+2. Разность
+3. Умножение
+4. Деление
 
-Пример:
-Пользователь ввел число 163. Программа должна вывести:
-"В числе 163 количество сотен: 1, десятков: 6, единиц: 3"
+Необходимо сделать так, чтобы функция вернула число, например выражение
+`console.log(sum(2, 6));` должно вывести число 8 в консоль (sum - функция
+сложения в данном примере, ваши названия функций могут отличаться).
 
-Пример 2:
-Пользователь ввел число 74. Программа должна вывести:
-"В числе 74 количество сотен: 0, десятков: 7, единиц: 4"
+Округлять значения, которые возвращают функции не нужно, однако, обратите
+внимание на разность, функция должна вычесть из большего числа меньшее, либо
+вернуть 0, если числа равны.
 
-Пример 3:
-Пользователь ввел число 9537. Программа должна вывести:
-"В числе 9537 количество сотен: 5, десятков: 3, единиц: 7"
+Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать
+не нужно.
 
-Уточнение: пользователь всегда вводит корректное положительное число.
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
 <script>
   "use strict";
+/** @function summ 
+ * This function adds a and b.
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a + b 
+ */
+  function summ(a, b){
+	a = Number(a);
+	b = Number(b);
+	return a + b;
+  }
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+/** @function subb 
+ * This function subtracts a from b if b > a or b from a if a > b.
+ * 
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a subtract b 
+ */
+  function subb(a, b){
+    a = Number(a);
+	b = Number(b);
+
+	if(a > b){
+	  return Math.abs(a) - Math.abs(b);
+	}
+	if(a < b){
+	  return Math.abs(b) - Math.abs(a);
+	}
+	else{
+	  return 0;
+	}
+  }
+
+/** @function divv 
+ * This function divides a by b.
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a divide b 
+ */  
+  function divv(a, b){
+	return a / b;
+  }
+
+/** @function addd 
+ * This function multiplies a by b.
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a multiplie b 
+ */    
+  function addd(a, b){
+	return a * b;
+  }
+  
+  let a = 20;
+  let b = 50;
+  
+  console.log(summ(a, b));
+  console.log(subb(a, b));
+  console.log(divv(a, b));
+  console.log(addd(a, b));  
+  
 </script>
 </body>
 </html>
