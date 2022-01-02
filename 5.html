@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  "use strict";
+
+/** @function summ 
+ * This function adds a and b.
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a + b 
+ */
+  function summ(a, b){
+	a = Number(a);
+	b = Number(b);
+	return a + b;
+  }
+
+/** @function subb 
+ * This function subtracts a from b if b > a or b from a if a > b.
+ * 
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a subtract b 
+ */
+  function subb(a, b){
+    a = Number(a);
+	b = Number(b);
+
+	if(a > b){
+	  return Math.abs(a) - Math.abs(b);
+	}
+	if(a < b){
+	  return Math.abs(b) - Math.abs(a);
+	}
+	else{
+	  return 0;
+	}
+  }
+
+/** @function divv 
+ * This function divides a by b.
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a divide b 
+ */  
+  function divv(a, b){
+	return a / b;
+  }
+
+/** @function addd 
+ * This function multiplies a by b.
+ * @param {number} a - first number
+ * @param {number} b - second number
+ * @return a multiplie b 
+ */    
+  function addd(a, b){
+	return a * b;
+  }
+
+/** @function mathOperation 
+ * This function performs mathematical operations on the given arguments
+ * @param {number} arg1 - first number
+ * @param {number} arg2 - second number
+ * @param {string} operation - the sign of a mathematical operation
+ * @return result of a mathematical operation
+ */  
+  function mathOperation(arg1, arg2, operation){
+	
+	switch(operation){
+		case "+":
+		  return summ(arg1, arg2);
+		  break;
+		case "-":
+		  return subb(arg1, arg2);
+		  break;
+		case "/":
+		  return divv(arg1, arg2);
+		  break;
+		case "*":
+		  return addd(arg1, arg2);
+		  break;
+		default:
+		  return NaN;
+	}	
+  }
+  console.log(mathOperation(10, 20, "-"));
+  
+</script>
+</body>
+</html>
